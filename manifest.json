@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "FireGPT",
+    "version": "1.0",
+    "description": "Use ChatGPT as your default search engine in Firefox.",
+    "icons": {
+      "48": "icons/icon.png"
+    },
+    "permissions": ["contextMenus"],
+    "background": {
+      "scripts": ["background.js"]
+    },
+    "browser_specific_settings": {
+    "gecko": {
+      "id": "firegpt@eleventy8.com"
+    }
+  },
+    "chrome_settings_overrides": {
+        "search_provider": {
+          "name": "ChatGPT search",
+          "keyword": "chatgpt.com",
+          "favicon_url": "icons/icon.png",
+          "search_url": "https://chatgpt.com/?q={searchTerms}&hints=search&ref=ext",
+          "encoding": "UTF-8",
+          "is_default": true
+        }
+      }
+    }
