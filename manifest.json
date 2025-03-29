@@ -5,10 +5,12 @@
     "description": "FireGPT sets ChatGPT as your default search engine, enables an Omnibox keyword and adds a context menu search facility for highlighted text.",
     "icons": {
         "16": "icons/FireGPT-16.png",
-        "19": "icons/FireGPT-19.png",
-        "38": "icons/FireGPT-38.png",
+        "32": "icons/FireGPT-32.png",
         "48": "icons/FireGPT-48.png",
-        "128": "icons/FireGPT-128.png"
+        "64": "icons/FireGPT-64.png",
+        "96": "icons/FireGPT-96.png",
+        "128": "icons/FireGPT-128.png",
+        "256": "icons/FireGPT-256.png"
     },
     "permissions": ["contextMenus"],
     "background": {
@@ -21,10 +23,10 @@
     },
     "chrome_settings_overrides": {
         "search_provider": {
-            "name": "ChatGPT",
+            "name": "FireGPT",
             "keyword": "@chatgpt",
-            "favicon_url": "icons/FireGPT-128.png",
-            "search_url": "https://chatgpt.com/?q={searchTerms}&hints=search&ref=ext",
+            "favicon_url": "icons/FireGPT-256.png",
+            "search_url": "https://chatgpt.com/?q={searchTerms}&hints=search",
             "encoding": "UTF-8",
             "is_default": true
         }
