@@ -1,0 +1,12 @@
+{
+    "version": { "license": "MPL-2.0" },
+    "categories": { "firefox": ["search-tools", "productivity"] },
+    "contributions_url": "",
+    "requires_payment": false,
+    "homepage": {
+        "en-US": "https://www.linkedin.com/in/paul-george-6b9367358/"
+    },
+    "support_email": {
+        "en-US": "firegpt@eleventy8.com"
+    }
+}
