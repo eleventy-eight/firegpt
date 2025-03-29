@@ -2,9 +2,13 @@
     "manifest_version": 3,
     "name": "FireGPT",
     "version": "1.0",
-    "description": "FireGPT sets ChatGPT as your default search engine, enables an Omnibox keyword and adds a context menu search facility for highlghted text.",
+    "description": "FireGPT sets ChatGPT as your default search engine, enables an Omnibox keyword and adds a context menu search facility for highlighted text.",
     "icons": {
-        "48": "icons/icon.png"
+        "16": "icons/FireGPT-16.png",
+        "19": "icons/FireGPT-19.png",
+        "38": "icons/FireGPT-38.png",
+        "48": "icons/FireGPT-48.png",
+        "128": "icons/FireGPT-128.png"
     },
     "permissions": ["contextMenus"],
     "background": {
@@ -19,10 +23,11 @@
         "search_provider": {
             "name": "ChatGPT",
             "keyword": "@chatgpt",
-            "favicon_url": "icons/icon.png",
+            "favicon_url": "icons/FireGPT-128.png",
             "search_url": "https://chatgpt.com/?q={searchTerms}&hints=search&ref=ext",
             "encoding": "UTF-8",
             "is_default": true
         }
-    }
+    },
+    "omnibox": { "keyword": "gpt" }
 }
