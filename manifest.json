@@ -2,27 +2,27 @@
     "manifest_version": 3,
     "name": "FireGPT",
     "version": "1.0",
-    "description": "Use ChatGPT as your default search engine in Firefox.",
+    "description": "FireGPT sets ChatGPT as your default search engine, enables an Omnibox keyword and adds a context menu search facility for highlghted text.",
     "icons": {
-      "48": "icons/icon.png"
+        "48": "icons/icon.png"
     },
     "permissions": ["contextMenus"],
     "background": {
-      "scripts": ["background.js"]
+        "scripts": ["background.js"]
     },
     "browser_specific_settings": {
-    "gecko": {
-      "id": "firegpt@eleventy8.com"
-    }
-  },
+        "gecko": {
+            "id": "firegpt@eleventy8.com"
+        }
+    },
     "chrome_settings_overrides": {
         "search_provider": {
-          "name": "ChatGPT search",
-          "keyword": "chatgpt.com",
-          "favicon_url": "icons/icon.png",
-          "search_url": "https://chatgpt.com/?q={searchTerms}&hints=search&ref=ext",
-          "encoding": "UTF-8",
-          "is_default": true
+            "name": "ChatGPT",
+            "keyword": "@chatgpt",
+            "favicon_url": "icons/icon.png",
+            "search_url": "https://chatgpt.com/?q={searchTerms}&hints=search&ref=ext",
+            "encoding": "UTF-8",
+            "is_default": true
         }
-      }
     }
+}
