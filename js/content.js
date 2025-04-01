@@ -2,7 +2,7 @@ function createHoverIcon(target) {
   if (target.querySelector(".firegpt-hover-icon")) return;
 
   const icon = document.createElement("div");
-  icon.textContent = "💡";
+  icon.textContent = "🤔";
   icon.className = "firegpt-hover-icon";
   icon.style.position = "absolute";
   icon.style.top = "4px";
@@ -10,7 +10,7 @@ function createHoverIcon(target) {
   icon.style.cursor = "pointer";
   icon.style.fontSize = "14px";
   icon.style.zIndex = "9999";
-  icon.title = "Click to explain this code with FireGPT";
+  icon.title = "Click to explain this code with ChatGPT";
   
   const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
   if (darkMode) {
@@ -28,7 +28,19 @@ function createHoverIcon(target) {
   icon.addEventListener("click", (event) => {
     event.stopPropagation();
     event.preventDefault();
-    const code = target.innerText || target.textContent || "";
+    const clone = target.cloneNode(true);
+    clone.querySelectorAll(".firegpt-hover-icon, .tooltip-content").forEach(el => el.remove());
+    let code = (clone.innerText || clone.textContent || "").trim();
+    const lines = code.split("\n");
+    const indentLengths = lines
+      .filter(line => line.trim())
+      .map(line => line.match(/^(\s*)/)?.[1].length || 0);
+    const minIndent = Math.min(...indentLengths);
+    if (minIndent > 0) {
+      code = lines.map(line => line.slice(minIndent)).join("\n");
+    }
+    code = code.replace(/[ \t]{2,}/g, " ");
+    code = code.replace(/ ?\n ?/g, "\n");
     const encoded = encodeURIComponent(`Explain what this code does:\n\n${code}`);
     window.open(`https://chatgpt.com/?q=${encoded}`, "_blank");
   });
@@ -37,6 +49,6 @@ function createHoverIcon(target) {
   target.appendChild(icon);
 }
 
-document.querySelectorAll("pre, code").forEach(code => {
-  code.addEventListener("mouseenter", () => createHoverIcon(code));
+document.querySelectorAll("pre").forEach(pre => {
+  pre.addEventListener("mouseenter", () => createHoverIcon(pre));
 });
