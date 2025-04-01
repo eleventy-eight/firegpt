@@ -4,7 +4,7 @@ FireGPT sets ChatGPT as your default search engine, enables an Omnibox keyword a
 
 Version 1.2
 ===========
-Adds a small button on code blocks within webpages to send the code to ChatGPT for an explantion.
+Adds a small button on code blocks within webpages to send the code to ChatGPT for an explanation.
 
 Version 1.1
 ===========
