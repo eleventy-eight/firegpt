@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "FireGPT",
-    "version": "1.0",
+    "version": "1.1",
     "description": "FireGPT sets ChatGPT as your default search engine, enables an Omnibox keyword and adds a context menu search facility for highlighted text.",
     "icons": {
         "16": "icons/FireGPT-16.png",
@@ -14,22 +14,24 @@
     },
     "permissions": ["contextMenus"],
     "background": {
-        "scripts": ["background.js"]
-    },
-    "browser_specific_settings": {
-        "gecko": {
-            "id": "firegpt@eleventy8.com"
-        }
+        "service_worker": "js/background.js", // Chromium
+        "scripts": ["js/background.js"] // Firefox
     },
     "chrome_settings_overrides": {
         "search_provider": {
             "name": "FireGPT",
             "keyword": "@chatgpt",
-            "favicon_url": "icons/FireGPT-256.png",
+            // "favicon_url": "icons/FireGPT-16.png", // Firefox
+            "favicon_url": "https://cdn.oaistatic.com/assets/favicon-miwirzcw.ico", // Chromium
             "search_url": "https://chatgpt.com/?q={searchTerms}&hints=search",
             "encoding": "UTF-8",
             "is_default": true
         }
     },
-    "omnibox": { "keyword": "gpt" }
+    "omnibox": { "keyword": "gpt" },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "firegpt@eleventy8.com"
+        }
+    }
 }
