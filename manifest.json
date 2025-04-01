@@ -21,8 +21,8 @@
         "search_provider": {
             "name": "FireGPT",
             "keyword": "@chatgpt",
-            "favicon_url": "icons/FireGPT-16.png", // Firefox
-            // "favicon_url": "https://cdn.oaistatic.com/assets/favicon-miwirzcw.ico", // Chromium
+            // "favicon_url": "icons/FireGPT-16.png", // Firefox
+            "favicon_url": "https://cdn.oaistatic.com/assets/favicon-miwirzcw.ico", // Chromium
             "search_url": "https://chatgpt.com/?q={searchTerms}&hints=search",
             "encoding": "UTF-8",
             "is_default": true
