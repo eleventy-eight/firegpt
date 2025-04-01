@@ -40,5 +40,20 @@
         "gecko": {
             "id": "firegpt@eleventy8.com"
         }
+    },
+    "_locales": {
+        "en": {
+            "messages": {
+                "explainCodeTooltip": {
+                    "message": "Click to explain this code with ChatGPT"
+                },
+                "searchWithFireGPT": {
+                    "message": "Search with ChatGPT"
+                },
+                "explainWithFireGPT": {
+                    "message": "Explain code with ChatGPT"
+                }
+            }
+        }
     }
 }

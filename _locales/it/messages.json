@@ -1,0 +1,11 @@
+{
+  "explainCodeTooltip": {
+    "message": "Fai clic per spiegare questo codice con ChatGPT"
+  },
+  "searchWithFireGPT": {
+    "message": "Cerca con ChatGPT"
+  },
+  "explainWithFireGPT": {
+    "message": "Spiega il codice con ChatGPT"
+  }
+}
