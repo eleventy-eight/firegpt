@@ -3,13 +3,13 @@ let lastCodeSnippet = "";
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
     id: "firegpt-search",
-    title: chrome.i18n.getMessage("searchWithFireGPT"),
+    title: "Search with FireGPT",
     contexts: ["selection"],
   });
 
   chrome.contextMenus.create({
     id: "firegpt-explain-code",
-    title: chrome.i18n.getMessage("explainWithFireGPT"),
+    title: "Explain code with FireGPT",
     contexts: ["all"]
   });
 });
